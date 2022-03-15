@@ -6,7 +6,6 @@ services:
     volumes: ["./html:/var/www/html"]
     ports:
       - "${PORT:-8000}:80"
-    restart: always
     environment:
       WORDPRESS_DB_HOST: eicius.tk:3306
       WORDPRESS_DB_USER: petke
