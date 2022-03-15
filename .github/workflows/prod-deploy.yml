@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: create .env
-      - run: echo 'PORT=${ {secrets.PORT} }' > .env
+        run: echo 'PORT=${ {secrets.PORT} }' > .env
       
       - name: Run container
         run: docker-compose up -d
