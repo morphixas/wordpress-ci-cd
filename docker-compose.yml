@@ -7,7 +7,7 @@ services:
     ports:
       - "${PORT:-8000}:80"
     environment:
-      WORDPRESS_DB_HOST: eicius.tk:3306
-      WORDPRESS_DB_USER: petke
-      WORDPRESS_DB_PASSWORD: scJCmeFmJxycn6sq
-      WORDPRESS_DB_NAME: wp_db
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASS}
+      WORDPRESS_DB_NAME: ${DB_NAME}
