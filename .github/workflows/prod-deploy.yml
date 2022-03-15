@@ -1,0 +1,18 @@
+name: PROD-DEPLOY
+
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  Build:
+    runs-on: self-hosted
+    
+    steps:
+      - uses: actions/checkout@main
+      - name: create .env
+      - run: echo 'PORT=${ {secrets.PORT} }' > .env
+      
+      - name: Run container
+        run: docker-compose up -d
