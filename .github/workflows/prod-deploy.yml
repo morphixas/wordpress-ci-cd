@@ -12,11 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: create .env
-        run: echo 'PORT=${{ secrets.PORT }}' > .env
-        run: echo 'DB_HOST=${secrets.DB_HOST}' > .env
-        run: echo 'DB_HOST=${secrets.DB_USER}' > .env
-        run: echo 'DB_HOST=${secrets.DB_PASS}' > .env
-        run: echo 'DB_HOST=${secrets.DB_NAME}' > .env
+        run: |
+          echo 'PORT=${{ secrets.PORT }}' > .env
+          echo 'DB_HOST=${secrets.DB_HOST}' > .env
+          echo 'DB_HOST=${secrets.DB_USER}' > .env
+          echo 'DB_HOST=${secrets.DB_PASS}' > .env
+          echo 'DB_HOST=${secrets.DB_NAME}' > .env
       
       - name: Run container
         run: sudo docker-compose up -d
