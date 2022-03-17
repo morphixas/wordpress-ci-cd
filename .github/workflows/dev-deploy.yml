@@ -13,15 +13,16 @@ jobs:
       - uses: actions/checkout@main
         with:
           path: dev
-      - name: create .env file
+          
+      - name: Create .env file
         run: |
           echo 'PORT=${{ secrets.DEV_PORT }}' > .env
           echo 'DB_HOST=${{ secrets.DB_HOST }}' >> .env
           echo 'DB_USER=${{ secrets.DB_USER }}' >> .env
           echo 'DB_PASS=${{ secrets.DB_PASS }}' >> .env
           echo 'DB_NAME=${{ secrets.DB_NAME }}' >> .env
-          cd dev
       
-      - name: Run container
-        # run: docker-compose up -d
-        run: docker-compose -f dev-docker-compose.yml --compatibility up -d
+      - name: Run DEV container
+        run: |
+          cd dev
+          docker-compose -f dev-docker-compose.yml --compatibility up -d
