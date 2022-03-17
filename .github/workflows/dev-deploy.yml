@@ -1,0 +1,24 @@
+name: DEV-DEPLOY
+
+
+on:
+  push:
+    branches: [ dev ]
+    
+jobs:
+  Build:
+    runs-on: self-hosted
+    
+    steps:
+      - uses: actions/checkout@dev
+      - name: create .env file
+        run: |
+          echo 'PORT=${{ secrets.PORT }}' > .env
+          echo 'DB_HOST=${{ secrets.DB_HOST }}' >> .env
+          echo 'DB_USER=${{ secrets.DB_USER }}' >> .env
+          echo 'DB_PASS=${{ secrets.DB_PASS }}' >> .env
+          echo 'DB_NAME=${{ secrets.DB_NAME }}' >> .env
+      
+      - name: Run container
+        # run: docker-compose up -d
+        run: docker-compose --compatibility up -d
