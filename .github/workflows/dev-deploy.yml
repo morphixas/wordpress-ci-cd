@@ -23,4 +23,4 @@ jobs:
       
       - name: Run container
         # run: docker-compose up -d
-        run: docker-compose --compatibility up -d
+        run: docker-compose -f dev-docker-compose.yml --compatibility up -d
