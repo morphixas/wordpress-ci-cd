@@ -3,8 +3,6 @@ version: "3.3"
 services:
   wordpress:
     image: wordpress:latest
-    mem_limit: 2048M
-    mem_reservation: 256M
     cpus: 0.5
     volumes: ["./html:/var/www/html"]
     ports:
@@ -14,3 +12,8 @@ services:
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASS}
       WORDPRESS_DB_NAME: ${DB_NAME}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 2048M
