@@ -3,7 +3,7 @@ version: "3.3"
 services:
   wordpress:
     image: wordpress:latest
-    mem_limit: 2048M
+    mem_limit: 2048m
     cpuset: 1
     volumes: ["./html:/var/www/html"]
     ports:
