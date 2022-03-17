@@ -3,6 +3,9 @@ version: "3.3"
 services:
   wordpress:
     image: wordpress:latest
+    mem_limit: 2048M
+    mem_reservation: 256M
+    cpus: 0.5
     volumes: ["./html:/var/www/html"]
     ports:
       - "${PORT:-8000}:80"
