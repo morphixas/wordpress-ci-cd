@@ -21,4 +21,4 @@ jobs:
       
       - name: Run container
         # run: docker-compose up -d
-        run: docker stack deploy --compose-file docker-compose.yml wp_prod
+        run: docker-compose --compatibility up
