@@ -4,7 +4,6 @@ services:
   wordpress:
     image: wordpress:latest
     volumes: ["./html:/var/www/html"]
-    # minor check
     ports:
       - "${PORT:-8080}:80"
     environment:
