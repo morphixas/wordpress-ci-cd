@@ -10,7 +10,9 @@ jobs:
     runs-on: self-hosted
     
     steps:
-      - uses: actions/checkout@dev
+      - uses: actions/checkout@main
+        with:
+          path: dev
       - name: create .env file
         run: |
           echo 'PORT=${{ secrets.DEV_PORT }}' > .env
