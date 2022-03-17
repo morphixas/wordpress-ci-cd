@@ -3,7 +3,6 @@ version: "3.3"
 services:
   wordpress:
     image: wordpress:latest
-    cpus: 0.5
     volumes: ["./html:/var/www/html"]
     ports:
       - "${PORT:-8000}:80"
