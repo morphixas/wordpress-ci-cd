@@ -20,6 +20,7 @@ jobs:
           echo 'DB_USER=${{ secrets.DB_USER }}' >> .env
           echo 'DB_PASS=${{ secrets.DB_PASS }}' >> .env
           echo 'DB_NAME=${{ secrets.DB_NAME }}' >> .env
+          cd dev
       
       - name: Run container
         # run: docker-compose up -d
