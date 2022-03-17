@@ -20,4 +20,5 @@ jobs:
           echo 'DB_NAME=${{ secrets.DB_NAME }}' >> .env
       
       - name: Run container
-        run: docker-compose up -d
+        # run: docker-compose up -d
+        run: docker stack deploy --compose-file docker-compose.yml wp_prod
