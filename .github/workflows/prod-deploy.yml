@@ -21,4 +21,4 @@ jobs:
       
       - name: Run container
         # run: docker-compose up -d
-        run: docker-compose --memory=2048m --cpus=1 up
+        run: docker-compose --compatibility up
