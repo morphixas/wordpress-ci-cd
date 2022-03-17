@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@dev
       - name: create .env file
         run: |
-          echo 'PORT=${{ secrets.PORT }}' > .env
+          echo 'PORT=${{ secrets.DEV_PORT }}' > .env
           echo 'DB_HOST=${{ secrets.DB_HOST }}' >> .env
           echo 'DB_USER=${{ secrets.DB_USER }}' >> .env
           echo 'DB_PASS=${{ secrets.DB_PASS }}' >> .env
