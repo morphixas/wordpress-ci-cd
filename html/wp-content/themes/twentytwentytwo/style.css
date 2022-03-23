@@ -146,6 +146,6 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	padding-left: var(--wp--custom--spacing--outer);
 }
 
-.wp-site-blocks{
+/* .wp-site-blocks{
 	background-color: aqua !important;
-}
+} */
