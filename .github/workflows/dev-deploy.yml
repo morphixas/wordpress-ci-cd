@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: /home/runner/actions-runner/_work/dev
+    working-directory: ./dev
     
 jobs:
   Build:
