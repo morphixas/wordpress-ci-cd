@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
         with:
-          clean: false
+          path: main
         
       - name: create .env file
         run: |
