@@ -27,5 +27,5 @@ jobs:
         # run: docker-compose up -d
         # for testing comment
         run: |
-        cd main 
-        docker-compose --compatibility up -d
+          cd main 
+          docker-compose --compatibility up -d
