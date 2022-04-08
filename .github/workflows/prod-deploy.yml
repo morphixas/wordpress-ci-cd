@@ -5,16 +5,15 @@ on:
   push:
     branches: [ main ]
 
-defaults:
-  run:
-    working-directory: main
-
 jobs:
   Build:
     runs-on: self-hosted
     
     steps:
       - uses: actions/checkout@main
+        with:
+          clean: false
+        
       - name: create .env file
         run: |
           echo 'PORT=${{ secrets.PORT }}' > .env
