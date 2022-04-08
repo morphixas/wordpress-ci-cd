@@ -4,7 +4,11 @@ name: PROD-DEPLOY
 on:
   push:
     branches: [ main ]
-    
+
+defaults:
+  run:
+    working-directory: ./main
+
 jobs:
   Build:
     runs-on: self-hosted
