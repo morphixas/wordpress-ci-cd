@@ -4,6 +4,10 @@ name: DEV-DEPLOY
 on:
   push:
     branches: [ dev ]
+
+defaults:
+  run:
+    working-directory: /home/runner/actions-runner/_work/dev
     
 jobs:
   Build:
@@ -16,7 +20,6 @@ jobs:
           
       - name: Create .env file
         run: |
-          cd dev
           echo 'PORT=${{ secrets.DEV_PORT }}' > .env
           echo 'DB_HOST=${{ secrets.DB_HOST }}' >> .env
           echo 'DB_USER=${{ secrets.DB_USER }}' >> .env
@@ -25,5 +28,4 @@ jobs:
       
       - name: Run DEV container
         run: |
-          cd dev
           docker-compose -f dev-docker-compose.yml --compatibility up -d
